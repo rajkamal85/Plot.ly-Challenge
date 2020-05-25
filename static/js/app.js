@@ -1,7 +1,7 @@
 function init() {
     var dropdown = d3.select('#selDataset')
 
-    d3.json("data/samples.json").then((importedData) => {
+    d3.json("./data/samples.json").then((importedData) => {
         importedData.names.forEach(function(name) {
             dropdown.append("option").text(name).property("value")
         })
@@ -19,7 +19,7 @@ function optionChanged(testid) {
 
 function buildPlot(testid) {
 
-    d3.json("data/samples.json").then((importedData) => {
+    d3.json("./data/samples.json").then((importedData) => {
         //console.log(importedData);
         // wfreq = filtereddata.metadata.map(d => d.wfrep)
         // console.log(wfreq)
@@ -76,7 +76,7 @@ function buildPlot(testid) {
 }
 
 function panel(testid) {
-    d3.json("data/samples.json").then((importedData) => {
+    d3.json("./data/samples.json").then((importedData) => {
         metadata = importedData.metadata.filter(d => d.id == testid)[0]
         //console.log(metadata)
 
